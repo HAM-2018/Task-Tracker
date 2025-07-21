@@ -1,0 +1,21 @@
+import { Container } from "inversify";
+import { TasksController } from "../tasks/tasks.controller";
+import { TaskRouter } from "../routes/tasks.router";
+import { UserController } from "../user/user.controller";
+import { TaskService } from "../tasks/tasks.service";
+import { updateTaskProvider } from "../tasks/providers/updateTask.provider";
+import { GetTaskProvider } from "../tasks/providers/getTasks.provider";
+import { UserService } from "../user/user.service";
+import { UserRouter } from "../routes/user.router";
+
+export const container: Container = new Container();
+container.bind(TasksController).toSelf().inTransientScope();
+container.bind(TaskRouter).toSelf().inTransientScope();
+console.log("📦 Binding TaskService");
+container.bind(TaskService).toSelf().inTransientScope();
+container.bind(updateTaskProvider).toSelf().inTransientScope();
+container.bind(UserController).toSelf().inTransientScope();
+console.log("📦 Binding GetTaskProvider");
+container.bind(GetTaskProvider).toSelf().inTransientScope();
+container.bind(UserService).toSelf().inTransientScope();
+container.bind(UserRouter).toSelf().inTransientScope();

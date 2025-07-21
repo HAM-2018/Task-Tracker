@@ -1,0 +1,3 @@
+fetch(`http://localhost:3001/tasks/${taskId}`, {
+  method: "DELETE",
+});

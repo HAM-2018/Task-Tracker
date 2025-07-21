@@ -1,0 +1,10 @@
+POST http://localhost:3001/tasks/create
+Content-Type: application/json
+
+{
+    "title": "New Title",
+    "description": "Test description",
+    "status": "todo",
+    "priority": "normal",
+    "dueDate": "2025-01-01T12:00:00Z"
+}

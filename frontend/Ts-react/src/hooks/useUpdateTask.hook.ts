@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { fetchWithAuth } from "./fetchWith.auth";
 
 const updateTask = async (task: IUpdateTask) => {
-    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}tasks/update`, {
+    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}/tasks/update`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",

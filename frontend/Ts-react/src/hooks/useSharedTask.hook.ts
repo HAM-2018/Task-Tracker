@@ -2,8 +2,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { fetchWithAuth } from "./fetchWith.auth";
 
 const shareTask = async ({taskId, sharedWith}: {taskId: string; sharedWith: string[]}) => {
-    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}tasks/${taskId}/share`,{
-        method: "Post",
+    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}/tasks/${taskId}/share`,{
+        method: "POST",
         headers: {
             "Content-Type" : "application/json",
         },

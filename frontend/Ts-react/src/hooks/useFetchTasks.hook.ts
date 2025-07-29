@@ -5,7 +5,7 @@ import { fetchWithAuth } from "./fetchWith.auth";
 
 const fetchTask = async (): Promise<IResponse<ITask[]>> => {
 
-    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}tasks/`, {
+    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}/tasks/`, {
         method: "GET",
     });
 

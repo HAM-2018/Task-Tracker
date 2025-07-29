@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { QueryClient, useQueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function LoginPage() {
   const queryClient = useQueryClient();
@@ -17,7 +17,7 @@ export default function LoginPage() {
   setError("");
 
   try {
-    const response = await fetch("http://localhost:3001/auth/login", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

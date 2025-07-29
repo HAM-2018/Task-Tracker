@@ -50,7 +50,7 @@ export const CreateTaskForm = () => {
 
     function onSubmit (values: z.infer<typeof createTaskSchema>) {
       let dueDate = values.dueDate.toISOString();
-      mutate({...values, dueDate});
+      mutate({...values, dueDate, sharedWith: []});
     }
 
     useEffect(() => {

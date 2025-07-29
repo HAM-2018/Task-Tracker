@@ -54,10 +54,15 @@ A full-stack productivity web app for managing personal and team-based tasks, bu
 
 task-tracker/
 ├── backend/ # Node + Express API with Mongoose
+
 ├── frontend/ # React + Vite + Tailwind
+
 ├── k8s/ # Kubernetes manifests (Mongo, Backend, Frontend)
+
 ├── docker-compose.yml # For local dev
+
 ├── deploy.sh # Optional script to deploy to K8s cluster
+
 └── README.md
 
 
@@ -78,9 +83,9 @@ Option 2: Ensure your kubernetes cluster is up and configured (Two node kubeadm 
 
 1. Apply kubernetes manifest
 
-kubectl apply -f k8s/mongo/
-kubectl apply -f k8s/backend/
-kubectl apply -f k8s/frontend/
+- kubectl apply -f k8s/mongo/
+- kubectl apply -f k8s/backend/
+- kubectl apply -f k8s/frontend/
 
 2. Create a .env file in each frontend and backend directory using the .env.example as a template (or just use the example itself)
 

@@ -1,11 +1,11 @@
 import type { IResponse } from "@/types/response.interface";
 import type { ITask } from "@/types/tasks.interface";
-import { QueryClient, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { fetchWithAuth } from "./fetchWith.auth";
 
 const createTask = async (task: ITask) => {
 
-    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}tasks/create`, {
+    const response = await fetchWithAuth(`${import.meta.env.VITE_API_URL}/tasks/create`, {
         method: "POST",
         body: JSON.stringify(task)
     });

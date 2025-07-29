@@ -7,7 +7,7 @@ export const useDeleteTask = () => {
 
   return useMutation({
     mutationFn: async (id: string) => {
-      const res = await fetchWithAuth(`http://localhost:3001/tasks/${id}`, {
+      const res = await fetchWithAuth(`${import.meta.env.VITE_API_URL}/tasks/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Delete failed");

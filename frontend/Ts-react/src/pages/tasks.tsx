@@ -22,7 +22,6 @@ export const Tasks: FC = (): ReactElement => {
   const tasks = Array.isArray(data?.data) ? data.data as ITask[] : [];
    console.log(tasks.length);
 
-  const totalTasks = tasks.length;
   const todoTasks = tasks.filter(t => t.status === "todo").length;
   const inProgressTasks = tasks.filter (t => t.status === "inProgress").length;
   const completedTasks = tasks.filter (t => t.status === "completed").length;

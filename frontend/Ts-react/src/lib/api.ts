@@ -1,7 +1,7 @@
 
 export async function apiFetch(url: string, options: RequestInit = {}) {
   const token = localStorage.getItem("token");
-  return fetch(`http://localhost:3001${url}`, {
+  return fetch(`${import.meta.env.VITE_API_URL}${url}`, {
     ...options,
     headers: {
       ...(options.headers || {}),

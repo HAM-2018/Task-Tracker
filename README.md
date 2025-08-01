@@ -53,9 +53,9 @@ A full-stack productivity web app for managing personal and team-based tasks, bu
 ## 📁 Project Structure
 
 task-tracker/
-├── backend/ # Node + Express API with Mongoose
+├── backend/Task Tracker # Node + Express API with Mongoose
 
-├── frontend/ # React + Vite + Tailwind
+├── frontend/Ts-react # React + Vite + Tailwind
 
 ├── k8s/ # Kubernetes manifests (Mongo, Backend, Frontend)
 
@@ -65,6 +65,19 @@ task-tracker/
 
 └── README.md
 
+
+## 📋 Requirements
+
+### For Local Development (Docker Compose)
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- (Optional) Node.js + npm if running frontend/backend manually
+
+### For Kubernetes Deployment
+
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- A Kubernetes cluster (e.g., via `kubeadm` with Calico CNI)
 
 ## Getting Started
 
@@ -79,13 +92,15 @@ cd task-tracker
 3. Run the app using Docker Compose
 docker compose up --build
 
-Option 2: Ensure your kubernetes cluster is up and configured (Two node kubeadm and calico for cni in my case)
+Option 2: Ensure your kubernetes cluster is up and configured (kubeadm with two nodes and calico CNI)
 
 1. Apply kubernetes manifest
 
 - kubectl apply -f k8s/mongo/
 - kubectl apply -f k8s/backend/
 - kubectl apply -f k8s/frontend/
+- kubectl apply -f k8s/secret/
+- kubectl apply -f k8s/namespace/
 
 2. Create a .env file in each frontend and backend directory using the .env.example as a template (or just use the example itself)
 

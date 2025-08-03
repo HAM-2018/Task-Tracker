@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-tracker-backend
+  namespace: task-tracker
+  labels:
+    app: task-tracker-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-tracker-backend
+  template:
+    metadata:
+      labels:
+        app: task-tracker-backend
+    spec:
+      containers:
+      - name: task-backend
+        image: hadensmith/task-tracker-backend:v2
+        ports:
+        - containerPort: 3001
+        env:
+          - name: PORT
+            value: "3001"
+          - name: DATABASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: task-tracker-env
+                key: DATABASE_URL
+          - name: DATABASE_NAME
+            valueFrom:
+              secretKeyRef:
+                name: task-tracker-env
+                key: DATABASE_NAME
+          - name: JWT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: task-tracker-env
+                key: JWT_SECRET
+

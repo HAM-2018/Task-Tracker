@@ -89,6 +89,9 @@ cd task-tracker
 
 2. Create a .env file in each frontend and backend directory using the .env.example as a template (or just use the example itself).
 
+cp "frontend/Ts-react/.env.example" "frontend/Ts-react/.env"
+cp "backend/Task Tracker/.env.example" "backend/Task Tracker/.env"
+
 3. Run the app using Docker Compose
 docker compose up --build
 
@@ -96,15 +99,20 @@ Option 2: Ensure your kubernetes cluster is up and configured (kubeadm with two 
 
 1. Apply kubernetes manifest
 
+- NOTE: Apply namespace first to avoid namespace 
+
+- kubectl apply -f k8s/namespace/
+
+-NOTE: edit k8s/secret/task-tracker-secret.yaml and replace placeholders with actual env variables (Use your own or go off of env.example)
+- kubectl apply -f k8s/secret/
+
 - kubectl apply -f k8s/mongo/
 - kubectl apply -f k8s/backend/
 - kubectl apply -f k8s/frontend/
-- kubectl apply -f k8s/secret/
-- kubectl apply -f k8s/namespace/
 
-2. Create a .env file in each frontend and backend directory using the .env.example as a template (or just use the example itself)
+2. Create a .env file in frontend directory using the .env.example as a template (or just use the example itself)
 
-Frontend .env VITE_API_URL=http://<your-node-ip>:<node-port>
+Frontend .env VITE_API_URL=http://<your-node-ip>:<backend-node-port>
 use the IP of the node the deployment is scheduled on and the node-port of the backend deployment service.
 
 

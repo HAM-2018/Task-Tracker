@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --legacy-peer-deps
 
-# Copy source code (exclude .env via .dockerignore)
+
 COPY . .
 
 # Build TypeScript code

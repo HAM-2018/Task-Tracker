@@ -48,7 +48,7 @@ A full-stack productivity web app for managing personal and team-based tasks, bu
 
 ##  Live Demo
 
-> Coming soon... Or see the [Video Demo](#📽️-demo) below.
+[Watch the live demo here!!](https://youtu.be/vg44Tb4ERS0)
 
 ## 📁 Project Structure
 

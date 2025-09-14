@@ -112,7 +112,7 @@ Option 2: Ensure your kubernetes cluster is up and configured (kubeadm with two 
 
 2. Create a .env file in frontend directory using the .env.example as a template (or just use the example itself)
 
-Frontend .env VITE_API_URL=http://<your-node-ip>:<backend-node-port>
+Frontend .env VITE_API_URL=http://<your-node-ip>:<frontend-svc-port>
 use the IP of the node the deployment is scheduled on and the node-port of the backend deployment service.
 
 
